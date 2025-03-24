@@ -12,7 +12,7 @@ export default function CreateNewVotePage() {
     const navigate = useNavigate();
     const { pollId } = useParams({ from: "/$pollId/create-new-vote" });
     const { isPending, data, isError, error } = usePoll(pollId);
-    const { mutate, data: dataCreated, isPending: isPendingCreated, isError: isErrorOnCreated, error: errorOnCreated, isSuccess: isSuccessOnCreated, reset } = useCreateNewVote();
+    const { mutate, data: dataCreated, isPending: isPendingCreated, isError: isErrorOnCreated, error: errorOnCreated, isSuccess: isSuccessOnCreated } = useCreateNewVote();
 
     const handlerCreateNewVote = (data: formData) => {
         mutate({ participantId: data.participantId, pollId });
