@@ -1,0 +1,9 @@
+services: 
+  app:
+    container_name: challenge-sre-globo-web
+    build:
+      context: .
+      args: 
+        VITE_API_URL: ${VITE_API_URL}
+    ports:
+      - '0.0.0.0:4173:4173'
